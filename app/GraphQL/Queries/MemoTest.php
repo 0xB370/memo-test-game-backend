@@ -2,12 +2,14 @@
 
 namespace App\GraphQL\Queries;
 
-use App\Models\Memo;
 use GraphQL\Type\Definition\ResolveInfo;
 use Nuwave\Lighthouse\Support\Contracts\GraphQLContext;
+use Illuminate\Database\Eloquent\Model;
 
-final class MemoTest
+final class MemoTest extends Model
 {
+    protected $table = 'memo_tests';
+
     /**
      * Return a specific memo by ID.
      *
@@ -17,9 +19,9 @@ final class MemoTest
      * @param  \GraphQL\Type\Definition\ResolveInfo  $resolveInfo
      * @return \App\Models\Memo|null
      */
-    public function __invoke($root, array $args, GraphQLContext $context, ResolveInfo $resolveInfo): ?Memo
+    public function __invoke($root, array $args, GraphQLContext $context, ResolveInfo $resolveInfo): ?MemoTest
     {
-        return Memo::findOrFail($args['id']);
+        return MemoTest::findOrFail($args['id']);
     }
 
 }

@@ -13,4 +13,12 @@ class QueryResolver
     {
         return GameSession::findOrFail($args['id']);
     }
+
+    public function images($root, array $args, GraphQLContext $context, ResolveInfo $resolveInfo)
+    {
+        $gameSession = GameSession::findOrFail($args['id']);
+        $memoTest = MemoTest::findOrFail($gameSession->memo_test_id);
+
+        return $memoTest->images()->get();
+    }
 }
