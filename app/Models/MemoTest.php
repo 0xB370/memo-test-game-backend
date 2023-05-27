@@ -13,12 +13,12 @@ class MemoTest extends Model
 
     public function images()
     {
-        return $this->hasMany(Image::class);
+        return $this->hasMany(Image::class, 'memo_test_id');
     }
 
     public function gameSessions()
     {
-        return $this->hasMany(GameSession::class);
+        return $this->hasMany(GameSession::class, 'memo_test_id');
     }
 }
 

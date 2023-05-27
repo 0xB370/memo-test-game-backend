@@ -6,6 +6,7 @@ use Illuminate\Support\ServiceProvider;
 use App\GraphQL\Queries\MemoTestsQuery;
 use App\GraphQL\Queries\MemoTestQuery;
 use App\GraphQL\Queries\GameSessionQuery;
+use App\GraphQL\Queries\ImagesQuery;
 use App\GraphQL\Mutations\CreateMemoTest;
 use App\GraphQL\Mutations\AddImageToMemoTest;
 use App\GraphQL\Mutations\RemoveImageFromMemoTest;
@@ -71,6 +72,10 @@ class AppServiceProvider extends ServiceProvider
 
         $this->app->bind('Nuwave\\Lighthouse\\Schema\\Directive', function ($app) {
             return new UpdateGameSession();
+        });
+
+        $this->app->bind('Nuwave\\Lighthouse\\Schema\\Directive', function ($app) {
+            return new ImagesQuery();
         });
     }
 }

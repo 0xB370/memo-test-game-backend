@@ -11,8 +11,8 @@ class GameSession extends Model
 
     protected $fillable = ['retries', 'number_of_pairs', 'state'];
 
-    public function memoTest()
+    public function memoTestId()
     {
-        return $this->belongsTo(MemoTest::class);
+        return $this->belongsTo(MemoTest::class, 'memo_test_id');
     }
 }

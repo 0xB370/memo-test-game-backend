@@ -90,5 +90,6 @@ type Query {
     memoTests: [MemoTest!]!
     memoTest(id: ID!): MemoTest!
     gameSession(id: ID!): GameSession!
+    images: [Image!]!
 }
 
