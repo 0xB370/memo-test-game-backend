@@ -7,9 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 
 class Image extends Model
 {
-    protected $fillable = ['memo_test_id', 'url'];
-
-    public function memoTest()
+    public function memoTest(): BelongsTo
     {
         return $this->belongsTo(MemoTest::class);
     }

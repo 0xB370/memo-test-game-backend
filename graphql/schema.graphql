@@ -39,3 +39,56 @@ type User {
     "When the account was last updated."
     updated_at: DateTime!
 }
+
+type MemoTest {
+    id: ID!
+    name: String!
+    images: [Image!]!
+}
+
+type Image {
+    id: ID!
+    url: String!
+    memoTestId: ID!
+    memoTest: MemoTest!
+}
+
+type GameSession {
+    id: ID!
+    memoTestId: ID!
+    retries: Int!
+    numberOfPairs: Int!
+    state: SessionState!
+}
+
+enum SessionState {
+    Started
+    Completed
+}
+
+input CreateMemoTestInput {
+    name: String!
+    imageUrls: [String!]!
+}
+
+input UpdateGameSessionInput {
+    id: ID!
+    numberOfPairsSelected: Int!
+}
+
+type Mutation {
+    createMemoTest(input: CreateMemoTestInput!): MemoTest!
+    addImageToMemoTest(memoTestId: ID!, imageUrl: String!): MemoTest!
+    removeImageFromMemoTest(memoTestId: ID!, imageId: ID!): MemoTest!
+    deleteMemoTest(id: ID!): ID!
+    createGameSession(memoTestId: ID!, retries: Int!, numberOfPairs: Int!): GameSession!
+    endGameSession(id: ID!): GameSession!
+    updateGameSession(input: UpdateGameSessionInput!): GameSession!
+}
+
+type Query {
+    memoTests: [MemoTest!]!
+    memoTest(id: ID!): MemoTest!
+    gameSession(id: ID!): GameSession!
+}
+
