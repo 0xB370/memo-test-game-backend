@@ -68,6 +68,7 @@ enum SessionState {
 
 input CreateMemoTestInput {
     name: String!
+    imageUrls: [String!]!
 }
 
 input UpdateGameSessionInput {
