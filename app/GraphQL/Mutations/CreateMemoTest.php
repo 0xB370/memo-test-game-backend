@@ -14,7 +14,7 @@ final class CreateMemoTest
     public function __invoke($root, array $args)
     {
         $memoTest = new MemoTest();
-        $memoTest->name = $args['input']['name']; // Accede directamente a 'name' en el campo 'input'
+        $memoTest->name = $args['input']['name'];
         $memoTest->save();
 
         $imageUrls = $args['input']['imageUrls'];
@@ -22,11 +22,9 @@ final class CreateMemoTest
         foreach ($imageUrls as $imageUrl) {
             $image = new Image();
             $image->url = $imageUrl;
-            $image->memo_test_id = $memoTest->id; // Asigna el ID del MemoTest creado a la relación
+            $image->memo_test_id = $memoTest->id;
             $image->save();
         }
-
-        // $memoTest->images = [$args['input']['imageUrls']]; // Accede directamente a 'imageUrls' en el campo 'input'
 
         return $memoTest;
     }

@@ -33,47 +33,36 @@ class AppServiceProvider extends ServiceProvider
         $this->app->bind('Nuwave\\Lighthouse\\Schema\\Query', function ($app) {
             return new QueryResolver();
         });
-
         $this->app->bind('Nuwave\\Lighthouse\\Schema\\Directive', function ($app) {
             return new MemoTestsQuery();
         });
-
         $this->app->bind('Nuwave\\Lighthouse\\Schema\\Directive', function ($app) {
             return new MemoTestQuery();
         });
-
         $this->app->bind('Nuwave\\Lighthouse\\Schema\\Directive', function ($app) {
             return new GameSessionQuery();
         });
-
         $this->app->bind('Nuwave\\Lighthouse\\Schema\\Directive', function ($app) {
             return new CreateMemoTest();
         });
-
         $this->app->bind('Nuwave\\Lighthouse\\Schema\\Directive', function ($app) {
             return new AddImageToMemoTest();
         });
-
         $this->app->bind('Nuwave\\Lighthouse\\Schema\\Directive', function ($app) {
             return new RemoveImageFromMemoTest();
         });
-
         $this->app->bind('Nuwave\\Lighthouse\\Schema\\Directive', function ($app) {
             return new DeleteMemoTest();
         });
-
         $this->app->bind('Nuwave\\Lighthouse\\Schema\\Directive', function ($app) {
             return new CreateGameSession();
         });
-
         $this->app->bind('Nuwave\\Lighthouse\\Schema\\Directive', function ($app) {
             return new EndGameSession();
         });
-
         $this->app->bind('Nuwave\\Lighthouse\\Schema\\Directive', function ($app) {
             return new UpdateGameSession();
         });
-
         $this->app->bind('Nuwave\\Lighthouse\\Schema\\Directive', function ($app) {
             return new ImagesQuery();
         });

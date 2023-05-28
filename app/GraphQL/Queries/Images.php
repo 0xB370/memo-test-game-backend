@@ -8,13 +8,15 @@ use Illuminate\Database\Eloquent\Model;
 final class Images extends Model
 {
     /**
-     * @param  null  $_
-     * @param  array{}  $args
+     * Retrieve all images.
+     *
+     * @param  null  $rootValue
+     * @param  array  $args
+     * @return \Illuminate\Database\Eloquent\Collection
      */
+
     public function __invoke($rootValue, array $args)
     {
-        $images = Image::all();
-
-        return $images;
+        return Image::all();
     }
 }

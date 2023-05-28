@@ -7,8 +7,11 @@ use App\Models\MemoTest;
 final class AddImageToMemoTest
 {
     /**
-     * @param  null  $_
-     * @param  array{}  $args
+     * Add an image to an existing MemoTest
+     *
+     * @param  null  $root
+     * @param  array  $args
+     * @return MemoTest
      */
     public function __invoke($root, array $args)
     {

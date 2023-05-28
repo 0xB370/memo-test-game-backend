@@ -6,9 +6,13 @@ use App\Models\GameSession;
 final class EndGameSession
 {
     /**
-     * @param  null  $_
-     * @param  array{}  $args
+     * End a game session by updating its state to "Completed".
+     *
+     * @param  null  $root
+     * @param  array  $args
+     * @return GameSession
      */
+
     public function __invoke($root, array $args)
     {
         $gameSession = GameSession::findOrFail($args['id']);

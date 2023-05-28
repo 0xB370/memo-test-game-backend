@@ -2,7 +2,6 @@
 
 namespace Database\Seeders;
 
-use App\Models\Image;
 use App\Models\MemoTest;
 use Illuminate\Database\Seeder;
 
@@ -19,17 +18,17 @@ class ImageSeeder extends Seeder
         $memoTest2 = MemoTest::find(2);
 
         $memoTest1->images()->createMany([
-            ['url' => 'https://example.com/image1.jpg'],
-            ['url' => 'https://example.com/image2.jpg'],
-            ['url' => 'https://example.com/image3.jpg'],
-            ['url' => 'https://example.com/image4.jpg'],
+            ['url' => 'https://thumbs.dreamstime.com/z/beautiful-nature-thailand-james-bond-island-reflection-reflects-water-near-phuket-61039131.jpg'],
+            ['url' => 'https://thumbs.dreamstime.com/z/beautiful-nature-thailand-james-bond-island-reflection-reflects-water-near-phuket-61039131.jpg'],
+            ['url' => 'https://thumbs.dreamstime.com/z/landscape-nature-mountan-alps-rainbow-76824355.jpg'],
+            ['url' => 'https://thumbs.dreamstime.com/z/landscape-nature-mountan-alps-rainbow-76824355.jpg'],
         ]);
 
         $memoTest2->images()->createMany([
-            ['url' => 'https://example.com/image5.jpg'],
-            ['url' => 'https://example.com/image6.jpg'],
-            ['url' => 'https://example.com/image7.jpg'],
-            ['url' => 'https://example.com/image8.jpg'],
+            ['url' => 'https://thumbs.dreamstime.com/z/cute-cuddly-fuzzy-baby-animals-spring-lambs-sheep-siblings-snugg-snuggling-up-together-green-grass-look-like-smiling-109210933.jpg'],
+            ['url' => 'https://thumbs.dreamstime.com/z/cute-cuddly-fuzzy-baby-animals-spring-lambs-sheep-siblings-snugg-snuggling-up-together-green-grass-look-like-smiling-109210933.jpg'],
+            ['url' => 'https://thumbs.dreamstime.com/z/dolphins-jumping-over-waves-playful-breaking-hawaii-pacific-ocean-wildlife-scenery-marine-animals-natural-habitat-75896911.jpg'],
+            ['url' => 'https://thumbs.dreamstime.com/z/dolphins-jumping-over-waves-playful-breaking-hawaii-pacific-ocean-wildlife-scenery-marine-animals-natural-habitat-75896911.jpg'],
         ]);
     }
 }

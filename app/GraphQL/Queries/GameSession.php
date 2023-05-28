@@ -7,13 +7,14 @@ use Illuminate\Database\Eloquent\Model;
 final class GameSession extends Model
 {
     /**
-     * @param  null  $_
-     * @param  array{}  $args
+     * Retrieve a game session by ID.
+     *
+     * @param  null  $root
+     * @param  array  $args
+     * @return GameSessionModel
      */
     public function __invoke($root, array $args)
     {
-        $gs = GameSessionModel::findOrFail($args['id']);
-
-        return $gs;
+        return GameSessionModel::findOrFail($args['id']);
     }
 }

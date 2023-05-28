@@ -6,8 +6,11 @@ use App\Models\GameSession;
 final class CreateGameSession
 {
     /**
-     * @param  null  $_
-     * @param  array{}  $args
+     * Create a new GameSession.
+     *
+     * @param  null  $root
+     * @param  array  $args
+     * @return GameSession
      */
     public function __invoke($root, array $args): GameSession
     {
