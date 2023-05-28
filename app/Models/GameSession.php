@@ -9,7 +9,18 @@ class GameSession extends Model
 {
     use HasFactory;
 
-    protected $fillable = ['retries', 'number_of_pairs', 'state'];
+    protected $fillable = ['retries', 'numberOfPairs', 'state'];
+
+    public function getNumberOfPairsAttribute($value)
+    {
+        return $this->attributes['number_of_pairs'];
+    }
+
+    public function setNumberOfPairsAttribute($value)
+    {
+        $this->attributes['number_of_pairs'] = $value;
+    }
+
 
     public function memoTestId()
     {

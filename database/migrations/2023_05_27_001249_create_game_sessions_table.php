@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->foreignId('memo_test_id')->constrained();
             $table->integer('retries')->default(0);
-            $table->integer('number_of_pairs');
+            $table->integer('number_of_pairs')->default(0);
             $table->enum('state', ['Started', 'Completed']);
             $table->timestamps();
         });

@@ -59,9 +59,11 @@ class MutationResolver
         $gameSession = new GameSession();
         $gameSession->memoTestId = $args['memoTestId'];
         $gameSession->retries = $args['retries'];
-        $gameSession->numberOfPairs = $args['numberOfPairs'];
+        $gameSession->number_of_pairs = $args['numberOfPairs'];
         $gameSession->state = SessionState::Started;
         $gameSession->save();
+
+        dump($gameSession);
 
         return $gameSession;
     }

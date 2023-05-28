@@ -57,7 +57,7 @@ type GameSession {
     id: ID!
     memoTestId: ID!
     retries: Int!
-    numberOfPairs: Int!
+    numberOfPairs: Int
     state: SessionState!
 }
 
@@ -68,12 +68,11 @@ enum SessionState {
 
 input CreateMemoTestInput {
     name: String!
-    imageUrls: [String!]!
 }
 
 input UpdateGameSessionInput {
     id: ID!
-    numberOfPairsSelected: Int!
+    numberOfPairs: Int!
 }
 
 type Mutation {
@@ -81,7 +80,7 @@ type Mutation {
     addImageToMemoTest(memoTestId: ID!, imageUrl: String!): MemoTest!
     removeImageFromMemoTest(memoTestId: ID!, imageId: ID!): MemoTest!
     deleteMemoTest(id: ID!): ID!
-    createGameSession(memoTestId: ID!, retries: Int!, numberOfPairs: Int!): GameSession!
+    createGameSession(memoTestId: ID!, retries: Int!, numberOfPairs: Int!, state: String!): GameSession!
     endGameSession(id: ID!): GameSession!
     updateGameSession(input: UpdateGameSessionInput!): GameSession!
 }

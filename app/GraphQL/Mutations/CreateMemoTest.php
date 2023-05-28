@@ -6,16 +6,17 @@ use App\Models\MemoTest;
 final class CreateMemoTest
 {
     /**
-     * @param  null  $_
-     * @param  array{}  $args
+     * @param null $root
+     * @param array $args
+     * @return MemoTest
      */
     public function __invoke($root, array $args)
     {
         $memoTest = new MemoTest();
-        $memoTest->name = $args['name'];
+        $memoTest->name = $args['input']['name']; // Accede directamente a 'name' en el campo 'input'
         $memoTest->save();
 
-        $memoTest->images()->sync($args['images']);
+        // $memoTest->images = [$args['input']['imageUrls']]; // Accede directamente a 'imageUrls' en el campo 'input'
 
         return $memoTest;
     }

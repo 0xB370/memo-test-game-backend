@@ -11,8 +11,8 @@ final class UpdateGameSession
      */
     public function __invoke($root, array $args)
     {
-        $gameSession = GameSession::findOrFail($args['id']);
-        $gameSession->numberOfPairsSelected = $args['numberOfPairsSelected'];
+        $gameSession = GameSession::findOrFail($args['input']['id']);
+        $gameSession->number_of_pairs = $args['input']['numberOfPairs'];
         $gameSession->save();
 
         return $gameSession;

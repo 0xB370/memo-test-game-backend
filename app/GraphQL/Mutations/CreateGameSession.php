@@ -9,7 +9,7 @@ final class CreateGameSession
      * @param  null  $_
      * @param  array{}  $args
      */
-    public function __invoke($root, array $args)
+    public function __invoke($root, array $args): GameSession
     {
         $gameSession = new GameSession();
         $gameSession->memo_test_id = $args['memoTestId'];

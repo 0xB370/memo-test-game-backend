@@ -12,14 +12,7 @@ final class GameSession extends Model
      */
     public function __invoke($root, array $args)
     {
-        // $id = $args['id'];
-        // return GameSession::findOrFail($id);
-
         $gs = GameSessionModel::findOrFail($args['id']);
-
-        if (!$gs) {
-            return null;
-        }
 
         return $gs;
     }
