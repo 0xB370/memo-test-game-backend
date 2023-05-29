@@ -15,11 +15,11 @@ class MemoTestSeeder extends Seeder
     public function run()
     {
         MemoTest::create([
-            'name' => 'Memo Test 1',
+            'name' => 'Nature',
         ]);
 
         MemoTest::create([
-            'name' => 'Memo Test 2',
+            'name' => 'Animals',
         ]);
     }
 }
